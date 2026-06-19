@@ -44,6 +44,9 @@ The project currently has the following structure:
 
 Here is the history of the versions and the stuff that has been modified
 
+**v0.0.3**
+- Fixed an issue in `SystemPower` to avoid turning off on unplug.
+
 **v0.0.2**
 - `SystemPower` has been updated.
   The device now enters in light sleep mode after a short delay if no buttons are pressed to reduce battery usage.

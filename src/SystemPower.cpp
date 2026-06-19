@@ -14,12 +14,14 @@ void SystemPower::update() {
     } else {
         M5.Power.setLed(0);
 
-        if (M5.Power.getBatteryVoltage() < 3500) {
+        int level = M5.Power.getBatteryVoltage();
+
+        if ( level > 2500 && level < 3500) {
             M5.Power.powerOff();
         }
     }
 
-    sleepCheck(3000); // delay set to 3s for developpment
+    sleepCheck(10000); // delay set to 3s for developpment
 }
 
 void SystemPower::sleepCheck(unsigned long delayMs) {
