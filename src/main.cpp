@@ -11,9 +11,8 @@ void setup() {
 
     auto cfg = M5.config();
 
-    // setting some options to false by default to save power
     cfg.internal_imu = false; // gyro
-    cfg.internal_spk = false; // speaker
+    cfg.internal_spk = true; // speaker
     cfg.internal_mic = false; // microphone
 
     cfg.clear_display = true; // clears the display on boot
@@ -35,5 +34,4 @@ void loop() {
     M5.update();
 
     powerModule.update();
-
 }

@@ -6,15 +6,20 @@
 class SystemPower {
 
     private:
+
+        // This is set to 100mAh by default to avoid device heating during long periods of time plugged
         const int MAX_CHARGING_POWER = 100;
+
+        // The LED is set to medium brightness by default
         const int LED_BRIGHTNESS = 128;
 
+        // Variable used to store the last time a button was used
         unsigned long lastActionTime;
 
     public:
+
         /**
          * @brief Initialises the power module to the max charging power value in mAh
-         * This is set to 100mAh by default to avoid device heating during long periods of time plugged
          * 
          * @note Needs to be called once in the setup()
          */

@@ -30,7 +30,10 @@ void SystemPower::sleepCheck(unsigned long delayMs) {
             M5.Display.setBrightness(0);
             M5.Display.sleep();
 
-            esp_sleep_enable_ext0_wakeup(GPIO_NUM_37, 0);
+            gpio_wakeup_enable(GPIO_NUM_37, GPIO_INTR_LOW_LEVEL);
+            gpio_wakeup_enable(GPIO_NUM_39, GPIO_INTR_LOW_LEVEL);
+            esp_sleep_enable_gpio_wakeup();
+            
             esp_light_sleep_start();
 
             M5.Display.wakeup();
