@@ -44,6 +44,10 @@ The project currently has the following structure:
 
 Here is the history of the versions and the stuff that has been modified
 
+**v0.0.2**
+- `SystemPower` has been updated.
+  The device now enters in light sleep mode after a short delay if no buttons are pressed to reduce battery usage.
+
 **v0.0.1**
 - `SystemPower` module has been added.
   The StickC now turns off when its battery reaches 3.5v to protect it.

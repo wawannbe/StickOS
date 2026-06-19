@@ -3,21 +3,43 @@
 
 void SystemPower::init() {
 
-    // limiting the mA to avoid heating and preserve battery life, do not exceed 190mAh
-    M5.Power.setChargeCurrent(100);
+    M5.Power.setChargeCurrent(MAX_CHARGING_POWER);
 }
 
 void SystemPower::update() {
 
     if (M5.Power.isCharging()) {
-        M5.Power.setLed(128); // ~half the power to limit battery usage and heating
+        M5.Power.setLed(LED_BRIGHTNESS);
 
     } else {
         M5.Power.setLed(0);
 
-        // powers off the device if the battery level reaches below 3.5v
         if (M5.Power.getBatteryVoltage() < 3500) {
             M5.Power.powerOff();
         }
+    }
+
+    sleepCheck(3000); // delay set to 3s for developpment
+}
+
+void SystemPower::sleepCheck(unsigned long delayMs) {
+
+    if (M5.BtnA.isReleased() && M5.BtnB.isReleased()) {
+        
+        if (millis() - lastActionTime > delayMs) {
+            M5.Display.setBrightness(0);
+            M5.Display.sleep();
+
+            esp_sleep_enable_ext0_wakeup(GPIO_NUM_37, 0);
+            esp_light_sleep_start();
+
+            M5.Display.wakeup();
+            M5.Display.setBrightness(128);
+
+            lastActionTime = millis();
+        }
+
+    } else {
+        lastActionTime = millis();
     }
 }

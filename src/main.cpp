@@ -27,6 +27,8 @@ void setup() {
 
     // setting the screen to landscape mode
     M5.Display.setRotation(1);
+    M5.Display.setBrightness(128);
+    M5.Display.fillScreen(BLUE);
 }
 
 void loop() {
