@@ -46,6 +46,7 @@ Here is the history of the versions and the stuff that has been modified
 
 **v0.0.3**
 - Fixed an issue in `SystemPower` to avoid turning off on unplug.
+  Lowered the voltage limit to 3.3v.
 
 **v0.0.2**
 - `SystemPower` has been updated.

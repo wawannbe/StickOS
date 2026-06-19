@@ -16,7 +16,7 @@ void SystemPower::update() {
 
         int level = M5.Power.getBatteryVoltage();
 
-        if ( level > 2500 && level < 3500) {
+        if ( level > 2500 && level < 3300) {
             M5.Power.powerOff();
         }
     }
