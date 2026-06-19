@@ -24,3 +24,28 @@ The project uses some librairies in order to control the material (M5Unified) an
 
 ## Project structure
 
+The project currently has the following structure:
+
+```bash
+.
+├── include             # classes declaration
+│   └── SystemPower.h
+├── lib                 # librairies
+├── LICENSE
+├── platformio.ini
+├── README.md
+├── src                 # source code
+│   ├── main.cpp
+│   └── SystemPower.cpp
+└── test                # testing
+```
+
+## Changelog
+
+Here is the history of the versions and the stuff that has been modified
+
+**v0.0.1**
+- `SystemPower` module has been added.
+  The StickC now turns off when its battery reaches 3.5v to protect it.
+  Charging current has been limited to 100mAh to reduce heating and preserve battery health.
+  The integrated LED (GPIO10) now turns on when the device is on and charging.
