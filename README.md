@@ -42,7 +42,12 @@ The project currently has the following structure:
 
 ## Changelog
 
-Here is the history of the versions and the stuff that has been modified
+Here is the history of the versions and the stuff that has been modified:
+
+**v0.0.4**
+- Added the abstract class `Widget` as a parent class for all the widgets.
+- Added a `Text` class that manages the text items.
+- A `Window` class is being written to handle the windows and their widgets.
 
 **v0.0.3**
 - Fixed an issue in `SystemPower` to avoid turning off on unplug.

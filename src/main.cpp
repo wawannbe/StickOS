@@ -1,5 +1,7 @@
 # include <M5Unified.h>
+
 # include "SystemPower.h"
+# include "Text.h"
 
 // ====================< System modules declaration >====================
     
@@ -28,6 +30,12 @@ void setup() {
     M5.Display.setRotation(1);
     M5.Display.setBrightness(128);
     M5.Display.fillScreen(BLUE);
+    M5.Display.setFont(&fonts::Font0);
+
+    M5.Display.setTextColor(TFT_WHITE);
+    M5.Display.setTextDatum(MC_DATUM);
+    
+    Text test = Text("<No signal>", 120, 67, TFT_WHITE, MC_DATUM);
 }
 
 void loop() {
