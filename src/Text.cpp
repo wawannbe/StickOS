@@ -20,7 +20,7 @@ void Text::draw() {
 
     textdatum_t oldDatum = M5.Display.getTextDatum(); // saving the system datum
 
-    M5.Display.setTextColor(color); // changing to the item color
+    M5.Display.setTextColor(this->color); // changing to the item color
     M5.Display.setTextDatum(this->alignment); // changing to the item datum
 
     M5.Display.drawString(this->text.c_str(), this->x, this->y);
@@ -31,4 +31,13 @@ void Text::draw() {
 
 void Text::fill(uint16_t color) {
 
+    textdatum_t oldDatum = M5.Display.getTextDatum(); // saving the system datum
+
+    M5.Display.setTextColor(this->color, color); // changing to the item color
+    M5.Display.setTextDatum(this->alignment); // changing to the item datum
+
+    M5.Display.drawString(this->text.c_str(), this->x, this->y);
+
+    M5.Display.setTextColor(TFT_WHITE, TFT_BLACK); // restoring the system color
+    M5.Display.setTextDatum(oldDatum); // restoring the system datum
 }

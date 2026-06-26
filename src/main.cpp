@@ -29,10 +29,9 @@ void setup() {
     // setting the screen to landscape mode
     M5.Display.setRotation(1);
     M5.Display.setBrightness(128);
-    M5.Display.fillScreen(BLUE);
     M5.Display.setFont(&fonts::Font0);
 
-    M5.Display.setTextColor(TFT_WHITE);
+    M5.Display.setTextColor(TFT_WHITE, TFT_BLUE);
     M5.Display.setTextDatum(MC_DATUM);
     
     Text test = Text("<No signal>", 120, 67, TFT_WHITE, MC_DATUM);

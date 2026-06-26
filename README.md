@@ -24,25 +24,60 @@ The project uses some librairies in order to control the material (M5Unified) an
 
 ## Project structure
 
+### Filesystem
+
 The project currently has the following structure:
 
 ```bash
 .
 ├── include             # classes declaration
-│   └── SystemPower.h
+│   ├── SystemPower.h
+│   ├── Text.h
+│   ├── Widget.h
+│   └── Window.h
 ├── lib                 # librairies
 ├── LICENSE
 ├── platformio.ini
 ├── README.md
 ├── src                 # source code
 │   ├── main.cpp
-│   └── SystemPower.cpp
+│   ├── SystemPower.cpp
+│   ├── Text.cpp
+│   └── Widget.cpp
 └── test                # testing
+```
+
+### Polymorphism
+
+```mermaid
+flowchart TD
+
+  M(Main)
+
+    W(WindowManager)
+      Win(Window)
+        Wid(Widgets)
+          Txt(Text)
+          PB(ProgressBar)
+
+    P(SystemPower)
+
+  M --> W
+  P --> |Provides battery/power info| M
+
+  W --> |Displays| Win
+    Win --> |Contains| Wid
+      Wid --> Txt
+      Wid --> PB
 ```
 
 ## Changelog
 
 Here is the history of the versions and the stuff that has been modified:
+
+**v0.0.5**
+- README has been updated in order to be more explicit about polymorphism and the classes used.
+- Minor changes.
 
 **v0.0.4**
 - Added the abstract class `Widget` as a parent class for all the widgets.

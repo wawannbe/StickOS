@@ -21,7 +21,7 @@ void SystemPower::update() {
         }
     }
 
-    sleepCheck(10000); // delay set to 3s for developpment
+    sleepCheck(10000); // delay set to 10s for developpment
 }
 
 void SystemPower::sleepCheck(unsigned long delayMs) {
