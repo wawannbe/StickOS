@@ -59,6 +59,7 @@ flowchart TD
         Wid(Widgets)
           Txt(Text)
           PB(ProgressBar)
+          Misc(...)
 
     P(SystemPower)
 
@@ -69,6 +70,7 @@ flowchart TD
     Win --> |Contains| Wid
       Wid --> Txt
       Wid --> PB
+      Wid --> Misc
 ```
 
 ## Changelog
