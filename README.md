@@ -77,6 +77,10 @@ flowchart TD
 
 Here is the history of the versions and the stuff that has been modified:
 
+**v0.0.6**
+- The `Window` class has been implemented
+- Several bug fixes and changes
+
 **v0.0.5**
 - README has been updated in order to be more explicit about polymorphism and the classes used.
 - Minor changes.

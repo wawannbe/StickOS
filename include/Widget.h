@@ -23,10 +23,10 @@ class Widget {
          */
         uint16_t color;
 
+    public:
+
         // Boolean used to determine if the widget needs to be displayed
         bool isVisible;
-
-    public:
 
         /**
          * @brief Constructor for the abstract class
